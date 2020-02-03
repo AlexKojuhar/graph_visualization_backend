@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .graph_visualization.models import Node, Link
+from visualization.models import Node, Link
 
 class NodeTest(TestCase):
 
@@ -13,7 +13,7 @@ class NodeTest(TestCase):
             'IntegerField'
         )
         self.assertTrue(
-            Link._meta.get_field('name').get_internal_type(),
+            Node._meta.get_field('name').get_internal_type(),
             'CharField'
         )
 
@@ -39,6 +39,6 @@ class LinkTest(TestCase):
             'ForeignKey'
         )
         self.assertTrue(
-            Lonk._meta.get_field('target').get_internal_type(),
+            Link._meta.get_field('target').get_internal_type(),
             'ForeignKey'
         )
